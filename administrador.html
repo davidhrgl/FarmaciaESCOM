@@ -1,0 +1,125 @@
+﻿<html>
+
+<body>
+<script src="wwwroot/lib/jquery/dist/jquery.js"></script>
+<script src="wwwroot/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="wwwroot/lib/bootstrap/dist/css/bootstrap.css" />
+<style>
+    td.td-buttons {
+        width: 1%;
+    }
+</style>
+<br />
+<h1>Administrador</h1>
+<br />
+
+<form class="needs-validation" novalidate>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="validationTooltip01">Parametro</label>
+            <input type="text" class="form-control" id="validationTooltip01" placeholder="Buscar"  required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationTooltip02">Buscar por:</label>
+            <fieldset class="form-group">
+                <div class="row">
+
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Nombre
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> Codigo
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> Agente activo
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <br />
+    <button class="btn btn-primary" type="button" onclick="hola()">ENVIAR</button>
+    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-plus-sign"></span> AGREGAR CONTACTO</button>
+</form>
+<br />
+<hr />
+<br />
+<h3>Resultados <span class="label label-default">Por Nombre</span></h3>
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="numero">John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td class="td-buttons"><button type="button" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-pencil"></span> Modificar</button></td>
+            <td class="td-buttons"><button type="button" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-trash"></span> Eliminar</button></td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td class="td-buttons">
+                <button type="button" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-pencil"></span> Modificar
+                </button>
+            </td>
+            <td class="td-buttons">
+                <button type="button" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span> Eliminar
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td class="td-buttons">
+                <button type="button" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-pencil"></span> Modificar
+                </button>
+            </td>
+            <td class="td-buttons">
+                <button type="button" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span> Eliminar
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+    function hola()
+    {
+        var valores = "";
+        $(".numero").parent("tr").find("td").each(function () {
+            console.log($(this).html())
+            /*if ($(this).html() != "<button>") {
+                valores += $(this).html() + " ";
+            }*/
+            $(".numero").css("background-color", "#ddd");
+        });
+
+            valores = valores + "\n";
+            alert(valores);
+    }
+</script>
+
